@@ -70,7 +70,7 @@ __interrupt void ADC12_ISR(void)
 
 // Timer B management
 unsigned int sampStep = SPS_STD;				///< TBCCR1 Sampling Step
-unsigned int flipStep = SPS_STD;
+unsigned int flipStep = 32768;
 
 /**************************************************************************//**
  * \brief Initialize the DCO to the target frequency needed to support UART
@@ -260,5 +260,7 @@ __interrupt void Timer_B1(void)
 __interrupt void TB0_ISR (void)
 {
 	TBCCR0	+= flipStep;
-	P1OUT	^= 0x08;		// output clock on p1.2
+	if(STATE == RUNNING ){
+		LED_TOGGLE();
+	}
 }

@@ -1,3 +1,11 @@
+/**************************************************************************//**
+ * MSPADC (Generic Sensor System)
+ *
+ * A stripped down version of the TEMPO3.2f firmware. It is useful for sampling
+ * any analog sensor via a serial link to an Olimex board.
+ *
+ *****************************************************************************/
+
 #include <msp430x16x.h>
 #include "GSystem.h"
 

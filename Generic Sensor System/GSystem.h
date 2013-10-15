@@ -36,6 +36,7 @@ typedef struct
 } commandStruct;
 
 void portInit(void);
+void terminalStart(int x);
 void portSamp(void);
 void parseCommands(void);
 void buttonStartup(void);
